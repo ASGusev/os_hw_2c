@@ -18,6 +18,8 @@ static void qemu_gdb_hang(void)
 extern void error();
 void main(void)
 {
+	setup_serial();	
+	
 	send_string("A message through serial port.\n");
 	
 	setup_idt();
