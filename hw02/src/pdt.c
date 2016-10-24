@@ -14,5 +14,5 @@ void make_pdt() {
 	}
 	pml4[0] = (unsigned long long)pdpt | 7ull;
 	pml4[TABLE_LENGTH - 1] = pml4[0];
-	__asm__ volatile("mov %0, %%cr3" : "=r"(pml4) : );
+	__asm__ volatile("mov %%cr3, %0" : "=r"(pml4) : );
 }
